@@ -83,7 +83,7 @@ python train.py
 python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_to_a_directory_stored_test_data> --out_dir <path_to_an_output_directory> --pretrained <path_to_a_pretrained_model> --cuda
 ```
 
-There're my pre-trained models on [ISTD](./pretrained_models/RICE1/)(`./pretrained_models/RICE1/gen_model_epoch_200.pth`) and [RICE2]((./pretrained_models/RICE1/))(`./pretrained_models/RICE2/gen_model_epoch_200.pth`).
+There're my pre-trained models on [ISTD](./pretrained_models/RICE1/)(`./pretrained_models/RICE1/gen_model_epoch_200.pth`) 
 
 Some results are shown as bellow and the images from left to right are: input, attention map, SpA-Former's output, ground truth.
 
