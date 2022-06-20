@@ -17,7 +17,7 @@
 shadow removal and cloud removal based on CLNet， paper is coming soon
 ## Results of shadow removal on ISTD dataset
 
-![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/106-2.png))
+![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/result.png))
 
 ## Quick Run
 
