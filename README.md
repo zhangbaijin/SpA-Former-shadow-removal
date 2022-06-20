@@ -36,9 +36,9 @@ python demo.py --task Task_Name --input_dir path_to_images --result_dir save_ima
 # Dataset 
 Download datasets RICE from [here](https://github.com/BUPTLdy/RICE_DATASET), and ISTD dataset from [here](https://github.com/nhchiu/Shadow-Removal-ISTD)
 
-#### To reproduce PSNR/SSIM scores of the paper, run MATLAB script
+#### To reproduce PSNR/SSIM/RMSE scores of the paper, run MATLAB script
 ```
-evaluate_PSNR_SSIM.m
+evaluate.m
 ```
 # ACKNOLAGEMENT
 The code is updated on [https://github.com/Penn000/SpA-GAN_for_cloud_removal)]
@@ -91,7 +91,7 @@ Some results are shown as bellow and the images from left to right are: input, a
 
 ## 5. EXPERIMENTS
 
-In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and MSE as metrics on datasets ISTD.
+In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and RMSE as metrics on datasets ISTD.
 
 ![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/compare.png))
 
@@ -117,14 +117,7 @@ If you think this work is helpful for your research, give me a star :-D
 
 ### Citations
 
-```
-@article{Pan2020,
-  title   = {Cloud Removal for Remote Sensing Imagery via Spatial Attention Generative Adversarial Network},
-  author  = {Heng Pan},
-  journal = {arXiv preprint arXiv:2009.13015},
-  year    = {2020}
-}
-```
+
 
 
 
