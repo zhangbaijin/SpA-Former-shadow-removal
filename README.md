@@ -13,8 +13,7 @@
 ### new
 
 - 2022.6.30  The draft is released now at https://arxiv.org/abs/2009.13015.
-
-shadow removal and cloud removal based on CLNet， paper is coming soon
+SpA-Former:Transformer image shadow detection and removal via spatial attention  
 ## Results of shadow removal on ISTD dataset
 
 ![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/result.png))
