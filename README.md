@@ -1,5 +1,5 @@
 <div align="center">
-<h1>SpA GAN for Cloud Removal</h1>
+<h1>SpA-Former for shadow Removal</h1>
 </div>
 
 <div align="center">
@@ -12,24 +12,39 @@
 
 ### new
 
-- 2020.9.29  The draft is released now at https://arxiv.org/abs/2009.13015.
+- 2022.6.30  The draft is released now at https://arxiv.org/abs/2009.13015.
+
+shadow removal and cloud removal based on CLNet， paper is coming soon
+## Results of Cloud removal on RICE dataset
+
+![image](https://github.com/zhangbaijin/MPRNet-Cloud-removal/blob/main/cloud-results.jpg)
+
+## Results of Shadow removal on ISTD dataset
+![image](https://github.com/zhangbaijin/MPRNet-Cloud-removal/blob/main/shadow-results.jpg)
+
+## Quick Run
+
+To test the pre-trained models of [Decloud](https://drive.google.com/drive/folders/1hJQVQopWMD0WazeQzZC2eDbtirXkGILO?usp=sharing) on your own images, run 
+```
+python demo.py --task Task_Name --input_dir path_to_images --result_dir save_images_here
+```
+
+## Pretrained model
 
 
-## 1. INTRODUCTION
+1. Download the pretrained model [cloud-removal](https://drive.google.com/drive/folders/1hJQVQopWMD0WazeQzZC2eDbtirXkGILO?usp=sharing)
 
-This is the source code of [***Cloud Removal for Remote Sensing Imagery via Spatial Attention Generative Adversarial Network***](https://arxiv.org/abs/2009.13015). In this work, I proposes a novel cloud removal model called ***spatial attention generative adversarial networks*** or ***SpA GAN***, which use [spatial attention networks (SPANet)](https://github.com/stevewongv/SPANet) as generator. The architecture of *SpA GAN* is shown as fellow:
+2.Baidu Drive: 链接：https://pan.baidu.com/s/1nBNEsRLIFS2VVtHl8O14Rw 提取码：5mli
 
-- **Generator**
+# Dataset 
+Download datasets RICE from [here](https://github.com/BUPTLdy/RICE_DATASET), and ISTD dataset from [here](https://github.com/nhchiu/Shadow-Removal-ISTD)
 
-*SpA GAN* uses *spatial attention networks* an generator. See `./models/gen/SPANet.py` for more details.
-
-<div align="center"><img src="./readme_images/SPANet.jpg"></div>
-
-- **Discriminator**
-
-Discriminator is a fully  CNN that **C** is convolution layer, **B** is batch normalization and **R** is Leaky ReLU. See `./models/dis/dis.py` for more details.
-
-<div align="center"><img src="./readme_images/dis.jpg"></div>
+#### To reproduce PSNR/SSIM scores of the paper, run MATLAB script
+```
+evaluate_PSNR_SSIM.m
+```
+# ACKNOLAGEMENT
+The code is updated on https://github.com/swz30/MPRNet
 
 - **Loss**
 
@@ -58,19 +73,19 @@ Click [official address](https://github.com/BUPTLdy/RICE_DATASET) or [Google Dri
 ```
 ./
 +-- data
-    +--	RICE_DATASET
-        +-- RICE1
-        |   +-- cloudy_image
+    +--	ISTD_DATASET
+        +-- train
+        |   +-- input
         |   |   +-- 0.png
         |   |   +-- ...
-        |   +-- ground_truth
+        |   +-- target
         |       +-- 0.png
         |       +-- ...
-        +-- RICE2
-            +-- cloudy_image
+        +-- test
+            +-- input
             |   +-- 0.png
             |   +-- ...
-            +-- ground_truth
+            +-- target
                 +-- 0.png
                 +-- ...
 ```
@@ -121,27 +136,17 @@ The result are shown as bellow and the images from left to right are: cloudy ima
 | **cycle GAN** | 25.880 | 0.893 |
 |  **SpA GAN**  | 30.232 | 0.954 |
 
-### 5.1 RICE2
 
-**qualitative analysis**
-
-The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
-
-<div align="center"><img src="./readme_images/rice2_result.png"></div>
 
 **quantitative analysis**
 
-|               |  PSNR  | SSIM  |
-| :-----------: | :----: | :---: |
-|   **cGAN**    | 25.384 | 0.811 |
-| **cycle GAN** | 23.910 | 0.793 |
-|  **SpA GAN**  | 28.368 | 0.906 |
+[image]()
 
 ## 6. CONTACT
 
 Contact me if you have any questions about the code and its execution.
 
-E-mail: penn000@foxmail.com
+E-mail:SemiZxf2163.com
 
 If you think this work is helpful for your research, give me a star :-D
 
