@@ -43,24 +43,6 @@ evaluate_PSNR_SSIM.m
 # ACKNOLAGEMENT
 The code is updated on [https://github.com/swz30/MPRNet](https://github.com/Penn000/SpA-GAN_for_cloud_removal)
 
-- **Loss**
-
-The total loss of *SpA GAN* is formulated as fellow:
-
-<div align="center"><img src="./readme_images/loss_spagan.png"></div>
-
-the first part is the loss of GAN
-
-<div align="center"><img src="./readme_images/loss_cgan.png"></div>
-
-the second part is standard $L_1$ loss where $\lambda_c$ is a hyper parameter to control the weight of each channel to the loss.
-
-<div align="center"><img src="./readme_images/loss_l1.png"></div>
-
-the third part is attention loss where $A$ is the attention map and $M$ is the mask of cloud that computed from $M=|I_{in}-I_{gt}|_1$.
-
-<div align="center"><img src="./readme_images/loss_att.png"></div>
-
 ## 2. DATASET
 
 ### 2.1. ISTD_DATASET
