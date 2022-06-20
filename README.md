@@ -15,12 +15,9 @@
 - 2022.6.30  The draft is released now at https://arxiv.org/abs/2009.13015.
 
 shadow removal and cloud removal based on CLNet， paper is coming soon
-## Results of Cloud removal on RICE dataset
+## Results of shadow removal on ISTD dataset
 
-![image](https://github.com/zhangbaijin/MPRNet-Cloud-removal/blob/main/cloud-results.jpg)
-
-## Results of Shadow removal on ISTD dataset
-![image](https://github.com/zhangbaijin/MPRNet-Cloud-removal/blob/main/shadow-results.jpg)
+![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/106-2.png))
 
 ## Quick Run
 
@@ -44,7 +41,7 @@ Download datasets RICE from [here](https://github.com/BUPTLdy/RICE_DATASET), and
 evaluate_PSNR_SSIM.m
 ```
 # ACKNOLAGEMENT
-The code is updated on https://github.com/swz30/MPRNet
+The code is updated on [https://github.com/swz30/MPRNet](https://github.com/Penn000/SpA-GAN_for_cloud_removal)
 
 - **Loss**
 
@@ -66,9 +63,9 @@ the third part is attention loss where $A$ is the attention map and $M$ is the m
 
 ## 2. DATASET
 
-### 2.1. RICE_DATASET
+### 2.1. ISTD_DATASET
 
-Click [official address](https://github.com/BUPTLdy/RICE_DATASET) or [Google Drive](https://drive.google.com/file/d/1Tsm9qEugNyDKLe4bu06e-2IqEhENu64D/view?usp=sharing) to download the open source RICE dataset. Build the file structure as the folder `data` shown. Here `cloudy_image` is the folder where the cloudy image is stored and the folder `ground_truth` stores the corresponding cloudless images.
+Click [official address]([here](https://github.com/nhchiu/Shadow-Removal-ISTD)) Build the file structure as the folder `data` shown. Here `input` is the folder where the shadow image is stored and the folder `target` stores the corresponding no shadow images.
 
 ```
 ./
@@ -90,10 +87,6 @@ Click [official address](https://github.com/BUPTLdy/RICE_DATASET) or [Google Dri
                 +-- ...
 ```
 
-### 2.2. Perlin Dataset
-
-Construct the dataset by adding Perlin noise as cloud into the image.
-
 ## 3. TRAIN
 
 Modify the `config.yml` to set your parameters and run:
@@ -110,15 +103,15 @@ python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_
 
 There're my pre-trained models on [RICE1](./pretrained_models/RICE1/)(`./pretrained_models/RICE1/gen_model_epoch_200.pth`) and [RICE2]((./pretrained_models/RICE1/))(`./pretrained_models/RICE2/gen_model_epoch_200.pth`).
 
-Some results are shown as bellow and the images from left to right are: cloudy image, attention map, SpA GAN's output, ground truth.
+Some results are shown as bellow and the images from left to right are: input, attention map, SpA-Former's output, ground truth.
 
-<div align="center"><img src="./readme_images/test_0000.png"></div>
-
-<div align="center"><img src="./readme_images/test_0026.png"></div>
+![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/106-2.png))
 
 ## 5. EXPERIMENTS
 
-In this section, I compares *SpA GAN* with *conditional GAN* and *cycle GAN* using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***) as metrics on datasets RICE1 and RICE2.
+In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and MSE as metrics on datasets ISTD.
+
+![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/compare.png))
 
 ### 5.1 RICE1
 
@@ -127,16 +120,6 @@ In this section, I compares *SpA GAN* with *conditional GAN* and *cycle GAN* usi
 The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
 
 <div align="center"><img src="./readme_images/rice1_result.png"></div>
-
-**quantitative analysis**
-
-|               |  PSNR  | SSIM  |
-| :-----------: | :----: | :---: |
-|   **cGAN**    | 26.547 | 0.903 |
-| **cycle GAN** | 25.880 | 0.893 |
-|  **SpA GAN**  | 30.232 | 0.954 |
-
-
 
 **quantitative analysis**
 
