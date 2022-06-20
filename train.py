@@ -14,7 +14,7 @@ from torch.autograd import Variable
 from torch.nn import functional as F
 
 from data_manager import TrainDataset,ValDataset
-from untitled1 import Generator
+from SpA_Former import Generator
 from models.dis.dis import Discriminator
 import utils
 from utils import gpu_manage, save_image, checkpoint
