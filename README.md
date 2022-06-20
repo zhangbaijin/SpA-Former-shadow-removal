@@ -93,19 +93,7 @@ Some results are shown as bellow and the images from left to right are: input, a
 
 In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and RMSE as metrics on datasets ISTD.
 
-![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/compare.png))
-
-### 5.1 RICE1
-
-**qualitative analysis**
-
-The result are shown as bellow and the images from left to right are: cloudy image, conditional GAN's output, cycle GAN's output , SpA GAN's output, ground truth.
-
-<div align="center"><img src="./readme_images/rice1_result.png"></div>
-
-**quantitative analysis**
-
-[image]()
+![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/compare.jpg))
 
 ## 6. CONTACT
 
