@@ -12,7 +12,7 @@
 
 ### new
 
-- 2022.6.30  The draft is released now at https://arxiv.org/abs/2009.13015.
+- 2022.6.30  The draft is released now at 
 SpA-Former:Transformer image shadow detection and removal via spatial attention  
 ## Results of shadow removal on ISTD dataset
 
