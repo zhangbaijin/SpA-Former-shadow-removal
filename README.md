@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/zhangbaijin/Spatial-Transformer-shadow-removal?color=green"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/zhangbaijin/Spatial-Transformer-shadow-removal">  <img alt="GitHub issues" src="https://img.shields.io/github/issues/zhangbaijin/Spatial-Transformer-shadow-removal"> <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Penn000/SpA-GAN_for_cloud_removal?color=red">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/zhangbaijin/Spatial-Transformer-shadow-removal?color=green"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/zhangbaijin/Spatial-Transformer-shadow-removal">  <img alt="GitHub issues" src="https://img.shields.io/github/issues/zhangbaijin/Spatial-Transformer-shadow-removal"> <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Spatial-Transformer-shadow-removal?color=red">
 </div>
 <div align="center">
 <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/zhangbaijin/Spatial-Transformer-shadow-removal?style=social"> <img alt="GitHub stars" src="https://img.shields.io/github/stars/zhangbaijin/Spatial-Transformer-shadow-removal"> <img alt="GitHub forks" src="https://img.shields.io/github/forks/zhangbaijin/Spatial-Transformer-shadow-removal?style=social">
