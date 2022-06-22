@@ -28,10 +28,10 @@ python demo.py --task Task_Name --input_dir path_to_images --result_dir save_ima
 ## Pretrained model
 
 1. Download the pretrained model shadow-removal[Google-drive](https://drive.google.com/drive/folders/1pxwwAfwnGKkLj-GAlkVCevbEQM4basgR?usp=sharing)
-and [Baidu Drive](https://pan.baidu.com/s/1slny1G_9WuxBcoyw5eKUVA)  提取码：rpis
+ and  [Baidu Drive](https://pan.baidu.com/s/1slny1G_9WuxBcoyw5eKUVA)  提取码：rpis
 ## Test results
 Our test results:  [Google-drive](https://drive.google.com/file/d/1m-zE9wxiEL8lO8pX5n65cbi0GQaAGSPr/view?usp=sharing)
-[Baidu drive](https://pan.baidu.com/s/1ek9qaowfPg4CkDaZF6KTCQ)  提取码：18ut
+and [Baidu drive](https://pan.baidu.com/s/1ek9qaowfPg4CkDaZF6KTCQ)  提取码：18ut
 
 # Dataset 
 Download datasets RICE from [here](https://github.com/BUPTLdy/RICE_DATASET), and ISTD dataset from [here](https://github.com/nhchiu/Shadow-Removal-ISTD)
@@ -91,7 +91,7 @@ Some results are shown as bellow and the images from left to right are: input, a
 
 ## 5. EXPERIMENTS
 
-In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and RMSE as metrics on datasets ISTD.
+In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and (***RMSE***) as metrics on datasets ISTD.
 
 ![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/compare.jpg))
 
