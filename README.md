@@ -99,7 +99,7 @@ In this section, I compares SpA-Former with several methods using peak signal to
 
 Contact me if you have any questions about the code and its execution.
 
-E-mail:SemiZxf2163.com
+E-mail: SemiZxf@163.com
 
 If you think this work is helpful for your research, give me a star :-D
 
