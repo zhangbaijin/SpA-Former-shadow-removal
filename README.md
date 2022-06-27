@@ -17,35 +17,50 @@ SpA-Former:Transformer image shadow detection and removal via spatial attention
 ## Results of shadow removal on ISTD dataset
 
 ![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/result.png))
+# Qucikly run
+## 1. TRAIN
 
-## Quick Run
+Modify the `config.yml` to set your parameters and run:
 
-To test the pre-trained models of shadow-removal on your own images, run 
+```bash
+python train.py
 ```
-python demo.py --task Task_Name --input_dir path_to_images --result_dir save_images_here
+
+## 2. TEST
+
+```bash
+python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_to_a_directory_stored_test_data> --out_dir <path_to_an_output_directory> --pretrained <path_to_a_pretrained_model> --cuda
 ```
 
-## Pretrained model
+There're my pre-trained models on [ISTD](./pretrained_models/RICE1/)(`./pretrained_models/ISTD/gen_model_epoch_200.pth`) 
+
+Some results are shown as bellow and the images from left to right are: input, attention map, SpA-Former's output, ground truth.
+
+![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/106-2.png))
+
+## 3. Pretrained model
 
 1. Download the pretrained model shadow-removal  [Google-drive](https://drive.google.com/drive/folders/1pxwwAfwnGKkLj-GAlkVCevbEQM4basgR?usp=sharing)
  and [Baidu Drive](https://pan.baidu.com/s/1slny1G_9WuxBcoyw5eKUVA)  提取码：rpis
-## Test results
+## 4.Test results
 Our test results:  [Google-drive](https://drive.google.com/file/d/1m-zE9wxiEL8lO8pX5n65cbi0GQaAGSPr/view?usp=sharing)
 and [Baidu drive](https://pan.baidu.com/s/1ek9qaowfPg4CkDaZF6KTCQ)  提取码：18ut
 
-# Dataset 
-Download datasets RICE from [here](https://github.com/BUPTLdy/RICE_DATASET), and ISTD dataset from [here](https://github.com/nhchiu/Shadow-Removal-ISTD)
-
-#### To reproduce PSNR/SSIM/RMSE scores of the paper, run MATLAB script
+## 5.Evaluate 
+To reproduce PSNR/SSIM/RMSE scores of the paper, run MATLAB script
 ```
 evaluate.m
 ```
+In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and (***RMSE***) as metrics on datasets ISTD.
+
+![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/compare.jpg))
+
 # ACKNOLAGEMENT
 The code is updated on [https://github.com/Penn000/SpA-GAN_for_cloud_removal)]
 
-## 2. DATASET
+# 2. DATASET
 
-### 2.1. ISTD_DATASET
+## 2.1. ISTD_DATASET
 
 Click [official address]([here](https://github.com/nhchiu/Shadow-Removal-ISTD)) Build the file structure as the folder `data` shown. Here `input` is the folder where the shadow image is stored and the folder `target` stores the corresponding no shadow images.
 
@@ -69,33 +84,8 @@ Click [official address]([here](https://github.com/nhchiu/Shadow-Removal-ISTD)) 
                 +-- ...
 ```
 
-## 3. TRAIN
 
-Modify the `config.yml` to set your parameters and run:
-
-```bash
-python train.py
-```
-
-## 4. TEST
-
-```bash
-python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_to_a_directory_stored_test_data> --out_dir <path_to_an_output_directory> --pretrained <path_to_a_pretrained_model> --cuda
-```
-
-There're my pre-trained models on [ISTD](./pretrained_models/RICE1/)(`./pretrained_models/ISTD/gen_model_epoch_200.pth`) 
-
-Some results are shown as bellow and the images from left to right are: input, attention map, SpA-Former's output, ground truth.
-
-![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/106-2.png))
-
-## 5. EXPERIMENTS
-
-In this section, I compares SpA-Former with several methods using peak signal to noise ratio (***PSNR***) and structural similarity index (***SSIM***)  and (***RMSE***) as metrics on datasets ISTD.
-
-![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/compare.jpg))
-
-## 6. CONTACT
+##  CONTACT
 
 Contact me if you have any questions about the code and its execution.
 
