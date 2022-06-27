@@ -5,7 +5,7 @@ from collections import OrderedDict
 from models.models_utils import weights_init, print_network
 # import common
 from Dual_conv import PaddingConv2d
-from restormer_arch import TransformerBlock,OverlapPatchEmbed,Downsample,Upsample
+from TransFormer import TransformerBlock,OverlapPatchEmbed,Downsample,Upsample
 
 
 
