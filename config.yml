@@ -1,0 +1,34 @@
+
+# folder path of dataset, which includes 2 subfolders: cloudy_image/ and ground_truth/
+datasets_dir: ./data/ISTD/train
+valset_dir: ./data/ISTD/test
+train_list: train_list.txt
+test_list: 
+validation_list: val_list.txt
+out_dir: ./results
+
+cuda: True
+gpu_ids: [0]
+
+train_size: 2
+val_size: 0 # 验证集大小是占训练集的半分比
+batchsize: 1
+validation_batchsize: 4
+epoch: 200
+n_data: 433
+width: 480
+height: 640
+threads: 4
+
+lr: 0.0004
+beta1: 0.5
+lamb: 100
+minimax: 1
+
+gen_init: ./results/000204/models/gen_model_epoch_68.pth
+dis_init: ./results/000204/models/dis_model_epoch_68.pth
+in_ch: 3
+out_ch: 3
+
+manualSeed: 0
+snapshot_interval: 1
