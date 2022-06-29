@@ -25,8 +25,8 @@ beta1: 0.5
 lamb: 100
 minimax: 1
 
-gen_init: ./results/000204/models/gen_model_epoch_68.pth
-dis_init: ./results/000204/models/dis_model_epoch_68.pth
+gen_init: 
+dis_init: 
 in_ch: 3
 out_ch: 3
 
