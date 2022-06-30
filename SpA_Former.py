@@ -18,23 +18,6 @@ def conv3x3(in_channels, out_channels, stride = 1):
     return nn.Conv2d(in_channels,out_channels,kernel_size = 3,
         stride =stride, padding=1,bias=False)
 
-
-'''    
-class Bottleneck(nn.Module):
-    def __init__(self,in_channels,out_channels,):
-        super(Bottleneck,self).__init__()
-        m  = OrderedDict()
-        m['conv1'] = nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=2, bias=False,dilation=2)
-        m['relu1'] = nn.ReLU(True)
-        m['conv2'] = nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=2, bias=False,dilation=2)
-        self.group1 = nn.Sequential(m)
-        self.relu= nn.Sequential(nn.ReLU(True))
-
-    def forward(self, x):
-        out = self.group1(x) 
-        return out
-
-'''    
   
 class ResBlock(nn.Module):
     def __init__(self, in_channel, out_channel):
@@ -166,8 +149,7 @@ class SAM(nn.Module):
 
 ###### Network
 class SPANet(nn.Module):
-    def __init__(self,
-        inp_channels=3, 
+    def __init__(self,inp_channels=3, 
         out_channels=3, 
         dim = 32,
         num_blocks = [4,6,6,8], 
@@ -184,14 +166,6 @@ class SPANet(nn.Module):
             conv3x3(3,32),
             nn.ReLU(True)
             )
-        self.conv_in1 = nn.Sequential(
-            conv3x3(32,32),
-            nn.ReLU(True)
-            )
-        self.conv_in2 = nn.Sequential(
-            conv3x3(32,32),
-            nn.ReLU(True)
-            )
         self.SAM1 = SAM(32,32,1)
         
         self.patch_embed = OverlapPatchEmbed(inp_channels, dim)
@@ -199,17 +173,14 @@ class SPANet(nn.Module):
         self.encoder_level1 = nn.Sequential(*[TransformerBlock(dim=dim, num_heads=heads[0], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[0])])
         
         self.down1_2 = Downsample(dim) ## From Level 1 to Level 2
-        
-        '''
         self.encoder_level2 = nn.Sequential(*[TransformerBlock(dim=int(dim*2**1), num_heads=heads[1], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[1])])
         
         self.down2_3 = Downsample(int(dim*2**1)) ## From Level 2 to Level 3
         self.encoder_level3 = nn.Sequential(*[TransformerBlock(dim=int(dim*2**2), num_heads=heads[2], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[2])])
-        
+
         self.down3_4 = Downsample(int(dim*2**2)) ## From Level 3 to Level 4
-        '''
-        self.latent = nn.Sequential(*[TransformerBlock(dim=int(dim*2**1), num_heads=heads[3], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[3])])
-        '''
+        self.latent = nn.Sequential(*[TransformerBlock(dim=int(dim*2**3), num_heads=heads[3], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[3])])
+        
         self.up4_3 = Upsample(int(dim*2**3)) ## From Level 4 to Level 3
         self.reduce_chan_level3 = nn.Conv2d(int(dim*2**3), int(dim*2**2), kernel_size=1, bias=bias)
         self.decoder_level3 = nn.Sequential(*[TransformerBlock(dim=int(dim*2**2), num_heads=heads[2], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[2])])
@@ -218,13 +189,12 @@ class SPANet(nn.Module):
         self.up3_2 = Upsample(int(dim*2**2)) ## From Level 3 to Level 2
         self.reduce_chan_level2 = nn.Conv2d(int(dim*2**2), int(dim*2**1), kernel_size=1, bias=bias)
         self.decoder_level2 = nn.Sequential(*[TransformerBlock(dim=int(dim*2**1), num_heads=heads[1], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[1])])
-        '''
         
         self.up2_1 = Upsample(int(dim*2**1))  ## From Level 2 to Level 1  (NO 1x1 conv to reduce channels)
-        self.reduce_chan_level1 = nn.Conv2d(int(dim*2**1), int(dim), kernel_size=1, bias=bias)
-        self.decoder_level1 = nn.Sequential(*[TransformerBlock(dim=int(dim), num_heads=heads[0], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[0])])
-        
 
+        self.decoder_level1 = nn.Sequential(*[TransformerBlock(dim=int(dim*2**1), num_heads=heads[0], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[0])])
+
+        
         self.res_block1 = ResBlock(32,32)
         self.res_block2 = ResBlock(32,32)
         self.res_block3 = ResBlock(32,32)
@@ -267,33 +237,11 @@ class SPANet(nn.Module):
     def forward(self, x):
         
         
-        out1 = self.conv_in(x)
-        out1 = self.conv_in1(out1)
-        out1 = self.conv_in2(out1)
-        
-        
-        inp_enc_level1 = self.patch_embed(x)
-        out_enc_level1 = self.encoder_level1(inp_enc_level1)
-        
-        inp_enc_level2 = self.down1_2(out_enc_level1)        
-        latent = self.latent(inp_enc_level2) 
-                        
-        inp_dec_level1 = self.up2_1(latent)
-        inp_dec_level1 = torch.cat([inp_dec_level1, out_enc_level1], 1)
-        inp_dec_level1 = self.reduce_chan_level1(inp_dec_level1)
-        out_dec_level1 = self.decoder_level1(inp_dec_level1)
-        
-        
-        
-        out = out_dec_level1 + out1
-        #out_dec_level1 = self.refinement(out_dec_level1)
-        
-        
-        
         #out = self.conv_in(x)
-        #out = self.conv_in1(out)
-        #out = self.conv_in2(out)
+        inp_enc_level1 = self.patch_embed(x)
+        out= self.encoder_level1(inp_enc_level1)
         
+            
         out = F.relu(self.res_block1(out) + out + self.fft_block1(out))
         out = F.relu(self.res_block2(out) + out + self.fft_block2(out))
         out = F.relu(self.res_block3(out) + out + self.fft_block3(out))
@@ -317,14 +265,15 @@ class SPANet(nn.Module):
         out = F.relu(self.res_block13(out) * Attention4 + out + self.fft_block13(out))
         out = F.relu(self.res_block14(out) * Attention4 + out + self.fft_block14(out))
         out = F.relu(self.res_block15(out) * Attention4 + out + self.fft_block15(out))
-        
-        
         out = F.relu(self.res_block16(out) + out + self.fft_block16(out))
         out = F.relu(self.res_block17(out) + out + self.fft_block17(out))
        
     
+        #out= self.decoder_level1(out) 
+
+    
+        #out=self.dualconv2d(out)
         out = self.conv_out(out)
-        
 
         return Attention4,out
 
