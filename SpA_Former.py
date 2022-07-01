@@ -4,7 +4,6 @@ import torch.nn.functional as F
 from collections import OrderedDict
 from models.models_utils import weights_init, print_network
 # import common
-from Dual_conv import PaddingConv2d
 from TransFormer import TransformerBlock,OverlapPatchEmbed,Downsample,Upsample
 
 
