@@ -12,7 +12,7 @@ gpu_ids: [0]
 
 train_size: 2
 val_size: 0 # 验证集大小是占训练集的半分比
-batchsize: 1
+batchsize: 4
 validation_batchsize: 4
 epoch: 200
 n_data: 433
