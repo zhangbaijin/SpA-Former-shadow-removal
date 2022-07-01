@@ -36,7 +36,7 @@ There're my pre-trained models on [ISTD](./pretrained_models/RICE1/)(`./pretrain
 
 Some results are shown as bellow and the images from left to right are: input, attention map, SpA-Former's output, ground truth.
 
-![image](https://github.com/zhangbaijin/Spatial-Transformer-shadow-removal/blob/main/106-2.png))
+![image](![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/imgs/introduction.png))))
 
 ## 3. Pretrained model
 
