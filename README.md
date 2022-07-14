@@ -38,6 +38,7 @@ Some results are shown as bellow and the images from left to right are: input, a
 
 ![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/imgs/introduction.png)
 
+The test dataset must be 640X480,so you should resize your dataset use our code ```bash python bigresize.py```
 ## 3. Pretrained model
 
 Download the pretrained model shadow-removal  [Google-drive](https://drive.google.com/drive/folders/1pxwwAfwnGKkLj-GAlkVCevbEQM4basgR?usp=sharing)
