@@ -28,8 +28,9 @@ python train.py
 
 ## 2. TEST
 
-First，the dataset is trained on 640x480, so you should resize test dataset to 640X480, you can use the code to resize your image ```bash python bigresize.py```
-
+First，the dataset is trained on 640x480, so you should resize test dataset to 640X480, you can use the code to resize your image 
+```bash python bigresize.py```
+and then follow the code to test the results:
 ```bash
 python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_to_a_directory_stored_test_data> --out_dir <path_to_an_output_directory> --pretrained <path_to_a_pretrained_model> --cuda
 ```
