@@ -16,7 +16,7 @@
 SpA-Former:Transformer image shadow detection and removal via spatial attention  
 ## Results of shadow removal on ISTD dataset
 
-![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/imgs/structure.png))
+![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/195.png))
 # Qucikly run
 ## 1. TRAIN
 
