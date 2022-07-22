@@ -34,7 +34,6 @@ and then follow the code to test the results:
 ```bash
 python predict.py --config <path_to_config.yml_in_the_out_dir> --test_dir <path_to_a_directory_stored_test_data> --out_dir <path_to_an_output_directory> --pretrained <path_to_a_pretrained_model> --cuda
 ```
-![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/195.png)
 Attention visual results is bellow:[Attention visual results](https://drive.google.com/file/d/188MbZxi3rVB41vAzLX2dssW4sRLYLqyn/view?usp=sharing).
 
 There're my pre-trained models on [ISTD](./pretrained_models/RICE1/)(`./pretrained_models/ISTD/gen_model_epoch_200.pth`) 
