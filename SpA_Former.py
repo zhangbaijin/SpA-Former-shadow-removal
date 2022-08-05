@@ -271,7 +271,7 @@ class SPANet(nn.Module):
         #out= self.decoder_level1(out) 
 
     
-        #out=self.dualconv2d(out)
+   
         out = self.conv_out(out)
 
         return Attention4,out
