@@ -17,7 +17,7 @@ SpA-Former:Transformer image shadow detection and removal via spatial attention.
 - You can play it on [Google colab](https://colab.research.google.com/github/kaz12tech/ai_demos/blob/master/SpA_Former_shadow_removal_demo.ipynb) 
 Thanks for the author. 
 
-- There is SpA-Former [Demo testing guidelines](https://colab.research.google.com/github/kaz12tech/ai_demos/blob/master/SpA_Former_shadow_removal_demo.ipynb)
+- There is SpA-Former [Demo testing guidelines](https://www.12-technology.com/2022/07/spa-former-python.html)
 ## Results of shadow removal on ISTD dataset
 
 ![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/195.png))
