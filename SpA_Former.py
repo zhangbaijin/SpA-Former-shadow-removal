@@ -147,7 +147,7 @@ class SAM(nn.Module):
        
 
 ###### Network
-class SPANet(nn.Module):
+class SpA_former(nn.Module):
     def __init__(self,inp_channels=3, 
         out_channels=3, 
         dim = 32,
@@ -159,7 +159,7 @@ class SPANet(nn.Module):
         LayerNorm_type = 'WithBias',   ## Other option 'BiasFree'
         dual_pixel_task = False  ):
         
-        super(SPANet,self).__init__()
+        super(SpA_former,self).__init__()
         
         self.conv_in = nn.Sequential(
             conv3x3(3,32),
@@ -281,7 +281,7 @@ class Generator(nn.Module):
         super().__init__()
         self.gpu_ids = gpu_ids
 
-        self.gen = nn.Sequential(OrderedDict([('gen', SPANet())]))
+        self.gen = nn.Sequential(OrderedDict([('gen', SpA_former())]))
 
         self.gen.apply(weights_init)
 
