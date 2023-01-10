@@ -39,7 +39,7 @@ def predict(config, args):
             att , out = gen(x)
 
             h = 1
-            w = 1
+            w = 3
             c = 3
             p = config.width
             q = config.height
@@ -52,9 +52,9 @@ def predict(config, args):
             att_ = att.cpu().numpy()[0] * 255
             heat_att = heatmap(att_.astype('uint8'))
       
-            #allim[0, 0, :] = in_rgb * 255
-            allim[0, 0, :] = out_rgb * 255
-            #allim[0, 2, :] = heat_att
+            allim[0, 0, :] = in_rgb * 255
+            allim[0, 1, :] = out_rgb * 255
+            allim[0, 2, :] = heat_att
             allim = allim.transpose(0, 3, 1, 4, 2)
             allim = allim.reshape((h*p, w*q, c))
             
