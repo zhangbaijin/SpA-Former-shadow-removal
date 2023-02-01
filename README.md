@@ -1,5 +1,5 @@
 <div align="center">
-<h1>SpA-Former:Transformer image shadow detection and removal via spatial attention  </h1>
+<h1>SpA-Former:An Effective and Lightweight Transformer for Image Shadow Removal </h1>
 </div>
 
 <div align="center">
