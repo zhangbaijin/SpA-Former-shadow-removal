@@ -18,9 +18,9 @@ SpA-Former:Transformer image shadow detection and removal via spatial attention.
 Thanks for the author. 
 
 - There is SpA-Former [Demo testing guidelines](https://www.12-technology.com/2022/07/spa-former-python.html)
-## Results of shadow removal on ISTD dataset
+## Attention map of SpA-Former on ISTD dataset
 
-![image]https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/attention-TWRNN.png))
+![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/attention-TWRNN.png)
 # Qucikly run
 ## 1. TRAIN
 
