@@ -20,7 +20,7 @@ Thanks for the author.
 - There is SpA-Former [Demo testing guidelines](https://www.12-technology.com/2022/07/spa-former-python.html)
 ## Results of shadow removal on ISTD dataset
 
-![image](https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/195.png))
+![image]https://github.com/zhangbaijin/SpA-Former-shadow-removal/blob/main/attention-TWRNN.png))
 # Qucikly run
 ## 1. TRAIN
 
