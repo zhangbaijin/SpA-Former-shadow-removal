@@ -102,8 +102,8 @@ If you think this work is helpful for your research, give me a star :-D
 ### Citations
 ```
 @article{zhang2022spa,
-  title={SpA-Former: Transformer image shadow detection and removal via spatial attention},
-  author={Zhang, Xiao Feng and Gu, Chao Chen and Zhu, Shan Ying},
+  title={SpA-Former: An Effective and Lightweight Transformer for Image Shadow Removal},
+  author={Zhang, Xiao Feng and Zhao, Yu Di and Gu, Chao Chen and Lu, Chang Sheng and Zhu, Shan Ying},
   journal={arXiv e-prints},
   pages={arXiv--2206},
   year={2022}
