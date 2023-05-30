@@ -1,5 +1,5 @@
 <div align="center">
-<h1>SpA-Former:An Effective and Lightweight Transformer for Image Shadow Removal(IJCNN2023) </h1>
+<h1>SpA-Former:An Effective and Lightweight Transformer for Image Shadow Removal(IJCNN2023 Oral) </h1>
 </div>
 
 <div align="center">
