@@ -11,6 +11,7 @@
 
 
 ### new
+-2023.8.4 IEEE EXPORE have published here:[https://ieeexplore.ieee.org/document/10191081}
 - 2023.4.7 The paper is accepted in IJCNN 2023! Thanks for your help
 - 2022.6.30  The draft is released now at [http://arxiv.org/abs/2206.10910](https://arxiv-export1.library.cornell.edu/pdf/2206.10910v1)
 SpA-Former:Transformer image shadow detection and removal via spatial attention.
