@@ -101,12 +101,15 @@ If you think this work is helpful for your research, give me a star :-D
 
 ### Citations
 ```
-@article{zhang2022spa,
-  title={SpA-Former: An Effective and Lightweight Transformer for Image Shadow Removal},
-  author={Zhang, Xiao Feng and Zhao, Yu Di and Gu, Chao Chen and Lu, Chang Sheng and Zhu, Shan Ying},
-  journal={arXiv e-prints},
-  pages={arXiv--2206},
-  year={2022}
+@INPROCEEDINGS{10191081,
+  author={Zhang, Xiaofeng and Zhao, Yudi and Gu, Chaochen and Lu, Changsheng and Zhu, Shanying},
+  booktitle={2023 International Joint Conference on Neural Networks (IJCNN)}, 
+  title={SpA-Former:An Effective and lightweight Transformer for image shadow removal}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-8},
+  doi={10.1109/IJCNN54540.2023.10191081}}
 ```
 
 
