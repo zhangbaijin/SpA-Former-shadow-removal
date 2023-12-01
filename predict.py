@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 
 from data_manager import TestDataset
 from utils import gpu_manage, save_image, heatmap
-from untitled1 import Generator
+from SpA_Former import Generator
 
 
 def predict(config, args):
