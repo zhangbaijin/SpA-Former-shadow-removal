@@ -101,7 +101,7 @@ E-mail: framebreak@sjtu.edu.cn
 If you think this work is helpful for your research, give me a star :-D
 
 ### Citations
-```
+```bibtex
 @INPROCEEDINGS{10191081,
   author={Zhang, Xiaofeng and Zhao, Yudi and Gu, Chaochen and Lu, Changsheng and Zhu, Shanying},
   booktitle={2023 International Joint Conference on Neural Networks (IJCNN)}, 
